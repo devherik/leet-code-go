@@ -2,18 +2,23 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	"slices"
 )
 
 func groupAnagrams(strs []string) [][]string {
+	// Criamos um mapa onde a chave será a string ordenada e o valor será um slice de strings que são anagramas da chave
 	anagramMap := make(map[string][]string)
 
 	for _, s := range strs {
+		// Geramos a chave ordenada da string
 		key := makeSortedKey(s)
+		// Adicionamos a string original ao slice da chave
 		anagramMap[key] = append(anagramMap[key], s)
 	}
 
+	// Criamos um slice de slices para armazenar o resultado
 	result := [][]string{}
+	// Iteramos sobre o mapa e adicionamos cada slice de strings ao resultado
 	for _, group := range anagramMap {
 		result = append(result, group)
 	}
@@ -24,9 +29,7 @@ func groupAnagrams(strs []string) [][]string {
 func makeSortedKey(s string) string {
 	b := []byte(s)
 
-	sort.Slice(b, func(i, j int) bool {
-		return b[i] < b[j]
-	})
+	slices.Sort(b)
 
 	return string(b)
 }
