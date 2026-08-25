@@ -34,7 +34,7 @@ func makeSortedKey(s string) string {
 	return string(b)
 }
 
-func main() {
+func main49() {
 	strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
 	groups := groupAnagrams(strs)
 	fmt.Println(groups)
