@@ -1,0 +1,1 @@
+The Boundary Pattern: ISO 8601 / RFC 3339Never accept unstructured time strings like "10/01/2026 09:20 AM". Enforce strict RFC 3339 / ISO 8601 formatting at your API boundary:$$\text{YYYY-MM-DDTHH:MM:SS}(\pm\text{HH:MM} \mid \text{Z})$$The Z stands for "Zulu time" (zero offset, i.e., UTC).

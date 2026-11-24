@@ -1,0 +1,19 @@
+[project]
+name = "telemetry-ml"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo>=0.24.2",
+    "polars>=1.44.2",
+    "pydantic>=2.13.5",
+    "pytest>=9.1.1",
+    "ruff>=0.16.8",
+    "torch>=2.14.0",
+    "ty>=0.0.83",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
